@@ -1,9 +1,20 @@
 <template>
   <div class="about">
-    <h1 class="primary-bg">This is an about page</h1>
+    <button @click="change">change</button>
+    <h1 ref="title" class="primary-bg">This is an about page</h1>
     <p>bgbgbgb</p>
+    <div class=""></div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    change() {
+      this.$refs.title.style.color = "red";
+    },
+  },
+};
+</script>
 <style lang="css">
 .about {
   --primary-color: #7f583f;
@@ -60,5 +71,9 @@
 .card {
   width: 500px;
   height: 500px;
+}
+
+.flex {
+  display: flex;
 }
 </style>
