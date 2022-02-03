@@ -1,35 +1,10 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <vxe-table border highlight-hover-row height="300" :data="tableData2">
-      <vxe-column type="seq" width="60"></vxe-column>
-      <vxe-column field="name" title="Name" :sort-by="sortNameMethod2" sortable>
-        <template #default="{ row }">
-          <span style="color: red">名字：{{ row.name }}</span>
-        </template>
-      </vxe-column>
-      <vxe-column field="num" title="Num" sortable></vxe-column>
-      <vxe-column
-        field="num1"
-        title="分离格式化与数值字段"
-        sort-by="num1"
-        sortable
-        :formatter="formatterNum2"
-      ></vxe-column>
-      <vxe-column
-        field="num2"
-        title="分离格式化与字符串字段"
-        sort-by="num2"
-        sort-type="number"
-        sortable
-        :formatter="formatterNum2"
-      ></vxe-column>
-    </vxe-table>
   </div>
 </template>
 
 <script>
-import XEUtils from "xe-utils";
 export default {
   data() {
     return {
@@ -93,14 +68,6 @@ export default {
       ],
     };
   },
-  methods: {
-    formatterNum2({ cellValue }) {
-      return XEUtils.commafy(XEUtils.toNumber(cellValue), { digits: 2 });
-    },
-    sortNameMethod2({ row }) {
-      // 按名称长度进行排序
-      return row.name.length;
-    },
-  },
+  methods: {},
 };
 </script>
